@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html>
+  
+  <head>
+   
+    <meta charset="utf-8">
+   
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+   
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+   
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+
+    <script src="js/routes.js"></script>
+    
+    <script src="js/controllers/HomeController.js"></script>    
+
+  </head>
+  
+  <body ng-app="starter">
+
+    <ion-pane>
+  
+      <ion-header-bar class="bar-energized" id="menu">
+  
+        <h1 class="title" id="titulo">Abastecimentos</h1>
+  
+      </ion-header-bar>
+  
+      <ion-content id="conteudo">        
+
+        <ion-nav-view></ion-nav-view>
+
+        <div id="gridUltimosAbastecimentos" class="list">              
+
+          <a class="item" href="#">            
+
+            <h2 class="dataAbastecimento">22/11/2015</h2>
+
+            <p>Valor Abastecimento : R$ 15,00</p>
+
+            <p>Véiculo : Motocicleta</p>
+
+          </a>
+
+        </div>
+
+        <div id="gridUltimosAbastecimentos2" class="list">              
+
+          <a class="item " href="#">
+        
+            <h2 class="dataAbastecimento">10/12/2015</h2>
+
+            <p>Valor Abastecimento : R$ 15,00</p>
+
+            <p>Véiculo : Motocicleta</p>
+
+          </a>
+
+        </div>
+
+        <div id="gridUltimosAbastecimentos3" class="list">              
+
+          <a class="item " href="#">
+        
+            <h2 class="dataAbastecimento">27/01/2015</h2>
+
+            <p>Valor Abastecimento : R$ 25,00</p>
+
+            <p>Veículo : Motocicleta</p>
+
+          </a>
+
+        </div>
+
+        <div id="gridUltimosAbastecimentos4" class="list">              
+
+          <a class="item " href="#">
+        
+            <h2 class="dataAbastecimento">10/02/2015</h2>
+
+            <p>Valor Abastecimento : R$ 25,00</p>
+
+            <p>Veículo : Motocicleta</p>
+
+          </a>
+
+        </div>
+
+        <div class="bar bar-footer bar-energized" id="footer">
+
+          <button id="btnCadVeiculo" class="button button-positive pull-right icon ion-plus" ng-click="send()"></button>
+
+        </div>
+  
+      </ion-content>
+  
+    </ion-pane>
+  
+  </body>
+
+</html>
+

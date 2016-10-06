@@ -1,0 +1,46 @@
+
+#btnCadVeiculo {
+	border-radius: 100%;
+	height: 50px;
+	width: 50px;
+	margin-top: -29px;
+
+}
+
+#titulo {
+	margin-left: 21%;	
+	margin-top: 40px;
+	font-size: 29px;
+	color: #4485F4;	
+	font-weight: bold;
+	font-family: 'Ubuntu';	
+}
+
+#menu {
+	height: 140px;
+}
+
+#gridUltimosAbastecimentos {
+
+}
+
+#conteudo {
+	margin-top: 120px;
+}
+
+.dataAbastecimento {
+	color: #4485F4;	
+	font-weight: bold;
+}
+
+#gridUltimosAbastecimentos2 {
+	margin-top: -15px;
+}
+
+#gridUltimosAbastecimentos3 {
+	margin-top: -15px;
+}
+
+#gridUltimosAbastecimentos4 {
+	margin-top: -15px;
+}
