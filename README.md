@@ -1,4 +1,9 @@
 Projeto de abastecimento.
-Criado na plataforma JavaScript
+==========
+Desenvolvido em Angular Js + Ionic 1.5
+
+Público Alvo
+==========
+Usuários de smartphones android, ios.
 
 
