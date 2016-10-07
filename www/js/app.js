@@ -1,7 +1,7 @@
 // Ionic Starter App
 
 
-var app = angular.module('starter', ['ionic', 'starter.routes', 'starter.homeController'])
+var app = angular.module('starter', ['ionic', 'starter.routes', 'starter.homeController', 'ngStorage'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -16,4 +16,52 @@ var app = angular.module('starter', ['ionic', 'starter.routes', 'starter.homeCon
     }
   });
 })
+
+app.controller('ListaAbastecimentoController', function($scope, $ionicModal, $localStorage) {
+
+	$scope.modal = {};
+
+	$localStorage.dadosVeiculos = [];
+
+
+	$scope.veiculo = {
+		modelo : "",
+		marca : "",
+		tipo : ""
+	};
+
+	$scope.abrirTelaCadastroVeiculo = function() {
+		
+		$ionicModal.fromTemplateUrl('templates/cadastroVeiculoModal.html', {
+
+			scope : $scope,
+
+			animation : 'slide-in-up'
+
+		}).then(function(modal) {
+
+			$scope.modal = modal;
+
+			$scope.modal.show();
+
+		})
+
+	}
+
+
+	$scope.cadastrarVeiculo = function(veiculo) {
+
+		console.log($scope.veiculo);
+
+		if ($scope.veiculo !== "") {
+
+			$localStorage.dadosVeiculos.push($scope.veiculo);
+
+
+
+		}
+
+	}
+
+});
 
