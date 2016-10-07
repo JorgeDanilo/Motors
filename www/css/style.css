@@ -9,9 +9,9 @@
 
 #btnVoltar {
 	border-radius: 100%;
-	height: 65px;
-	width: 65px;
-	margin-top: -34px;
+	height: 35px;
+	width: 35px;
+	margin-top: -22px;
 	background-color: red;
 	font-size: 18px;	
 }

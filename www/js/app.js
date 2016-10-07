@@ -1,9 +1,10 @@
 // Ionic Starter App
 
+var db = null;
 
-var app = angular.module('starter', ['ionic', 'starter.routes', 'starter.homeController', 'ngStorage'])
+var app = angular.module('starter', ['ionic', 'starter.routes', 'starter.homeController', 'ngStorage', 'ngCordova'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $cordovaSQLite) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       
@@ -49,14 +50,13 @@ app.controller('ListaAbastecimentoController', function($scope, $ionicModal, $lo
 	}
 
 
-	$scope.cadastrarVeiculo = function(veiculo) {
+	$scope.cadastrarVeiculo = function() {
 
 		console.log($scope.veiculo);
 
 		if ($scope.veiculo !== "") {
 
 			$localStorage.dadosVeiculos.push($scope.veiculo);
-
 
 
 		}
