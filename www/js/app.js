@@ -75,7 +75,7 @@ app.controller('ListaAbastecimentoController', function($scope, $ionicModal, $lo
 
 			 var alertPopup = $ionicPopup.alert({
 		     
-		     template: 'Veículo cadastrado com sucesso!'
+		     template: '<center>Veículo cadastrado com sucesso!</center>'
 		   });
 
 		   alertPopup.then(function(res) {
