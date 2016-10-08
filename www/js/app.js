@@ -18,12 +18,15 @@ var app = angular.module('starter', ['ionic', 'starter.routes', 'starter.homeCon
   });
 })
 
-app.controller('ListaAbastecimentoController', function($scope, $ionicModal, $localStorage) {
+app.controller('ListaAbastecimentoController', function($scope, $ionicModal, $localStorage, $ionicPopup) {
 
 	$scope.modal = {};
 
-	$localStorage.dadosVeiculos = [];
+	$localStorage.dadosVeiculos = [];	
 
+	var veiculo = new getVeiculos();
+
+	$scope.lista = veiculo.itens;
 
 	$scope.veiculo = {
 		modelo : "",
@@ -50,16 +53,43 @@ app.controller('ListaAbastecimentoController', function($scope, $ionicModal, $lo
 	}
 
 
-	$scope.cadastrarVeiculo = function() {
+	$scope.cadastrarVeiculo = function() {		
 
-		console.log($scope.veiculo);
+		var item = {marca : "", modelo : "", tipo : "", data : ""};		
+
+		$scope.lista = veiculo.itens;
+
+		item.marca = $scope.veiculo.marca;
+
+		item.modelo = $scope.veiculo.modelo;
+
+		item.tipo = $scope.veiculo.tipo;
+
+		item.data = new Date();
 
 		if ($scope.veiculo !== "") {
 
-			$localStorage.dadosVeiculos.push($scope.veiculo);
+			console.log(item);
+
+			veiculo.add(item);
+
+			 var alertPopup = $ionicPopup.alert({
+		     
+		     template: 'Veículo cadastrado com sucesso!'
+		   });
+
+		   alertPopup.then(function(res) {
+
+		   	$scope.modal.hide();
+		     
+		   });
 
 
 		}
+
+		veiculo.save();
+
+		delete $scope.item;
 
 	}
 

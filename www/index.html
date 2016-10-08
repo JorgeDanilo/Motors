@@ -22,6 +22,8 @@
 
     <script src="cordova.js"></script>
 
+    <script src="js/listagem.js"></script>
+
     <!-- your app's js -->
     <script src="js/app.js"></script>
 
@@ -29,7 +31,7 @@
     
     <script src="js/controllers/HomeController.js"></script>    
 
-    <script src="lib/ngstorage/ngStorage.min.js"></script>
+    <script src="lib/ngstorage/ngStorage.min.js"></script>    
 
 
 
@@ -49,55 +51,28 @@
 
         <ion-nav-view></ion-nav-view>
 
-        <div id="gridUltimosAbastecimentos" class="list">              
-
-          <a class="item" href="#">            
-
-            <h2 class="dataAbastecimento">22/11/2015</h2>
-
-            <p>Valor Abastecimento : R$ 15,00</p>
-
-            <p>Véiculo : Motocicleta</p>
-
-          </a>
-
-        </div>
 
         <div id="gridUltimosAbastecimentos2" class="list">              
 
-          <a class="item " href="#">
+          <a class="item " href="#" ng-repeat="item in lista">
         
-            <h2 class="dataAbastecimento">10/12/2015</h2>
+            <h2 class="dataAbastecimento">{{item.modelo}}</h2>
 
             <p>Valor Abastecimento : R$ 15,00</p>
 
-            <p>Véiculo : Motocicleta</p>
+            <p>Véiculo : {{item.modelo}}</p>
 
           </a>
 
         </div>
 
-        <div id="gridUltimosAbastecimentos3" class="list">              
+      </ion-content>
 
-          <a class="item " href="#">
-        
-            <h2 class="dataAbastecimento">27/01/2015</h2>
-
-            <p>Valor Abastecimento : R$ 25,00</p>
-
-            <p>Veículo : Motocicleta</p>
-
-          </a>
-
-        </div>
-
-        <div class="bar bar-footer bar-energized" id="footer">
+      <div class="bar bar-footer bar-energized" id="footer">
 
           <button id="btnCadVeiculo" class="button button-positive pull-right icon ion-plus" ng-click="abrirTelaCadastroVeiculo()"></button>
 
         </div>
-  
-      </ion-content>
   
     </ion-pane>
   

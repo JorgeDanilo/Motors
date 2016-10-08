@@ -57,9 +57,11 @@
 #tituloModalCadVeiculo {	
 	height: 100px;	
 	padding-top: 25px;
-	margin-left: 27%;
-	font-size: 22px;
+	margin-left: 17%;
+	font-size: 29px;
 	font-weight: bold;
+	color: #4485F4;	
+
 }
 
 #menuModalCadVeiculo {
