@@ -2,7 +2,7 @@
 
 var db = null;
 
-var app = angular.module('starter', ['ionic', 'starter.routes', 'starter.homeController', 'ngStorage', 'ngCordova'])
+var app = angular.module('starter', ['ionic', 'starter.routes', 'starter.homeController','starter.modalService', 'ngStorage', 'ngCordova'])
 
 .run(function($ionicPlatform, $cordovaSQLite) {
   $ionicPlatform.ready(function() {
@@ -18,7 +18,7 @@ var app = angular.module('starter', ['ionic', 'starter.routes', 'starter.homeCon
   });
 })
 
-app.controller('ListaAbastecimentoController', function($scope, $ionicModal, $localStorage, $ionicPopup) {
+app.controller('ListaAbastecimentoController', function($scope, $ionicModal, $localStorage, $ionicPopup, ModalService) {
 
 	$scope.modal = {};
 
@@ -34,23 +34,13 @@ app.controller('ListaAbastecimentoController', function($scope, $ionicModal, $lo
 		tipo : ""
 	};
 
-	$scope.abrirTelaCadastroVeiculo = function() {
-		
-		$ionicModal.fromTemplateUrl('templates/cadastroVeiculoModal.html', {
-
-			scope : $scope,
-
-			animation : 'slide-in-up'
-
-		}).then(function(modal) {
-
-			$scope.modal = modal;
-
-			$scope.modal.show();
-
-		})
-
-	}
+		$scope.abrirTelaCadastroVeiculo = function() {
+			ModalService
+				.init('templates/cadastroVeiculoModal.html', $scope)
+				.then(function(modal) {
+					modal.show();
+			});
+		};
 
 
 	$scope.cadastrarVeiculo = function() {		
