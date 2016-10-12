@@ -42,16 +42,9 @@
 	font-weight: bold;
 }
 
-#gridUltimosAbastecimentos2 {
+#gridUltimosAbastecimentos {
 	margin-top: -15px;
-}
-
-#gridUltimosAbastecimentos3 {
-	margin-top: -15px;
-}
-
-#gridUltimosAbastecimentos4 {
-	margin-top: -15px;
+	margin-bottom: 50px;
 }
 
 #tituloModalCadVeiculo {	

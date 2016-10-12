@@ -45,7 +45,7 @@ app.controller('ListaAbastecimentoController', function($scope, $ionicModal, $lo
 
 	$scope.cadastrarVeiculo = function() {		
 
-		var item = {marca : "", modelo : "", tipo : "", data : ""};		
+		var item = {marca : "", modelo : "", tipo : "", data : "", valor : ""};		
 
 		$scope.lista = veiculo.itens;
 
@@ -56,6 +56,8 @@ app.controller('ListaAbastecimentoController', function($scope, $ionicModal, $lo
 		item.tipo = $scope.veiculo.tipo;
 
 		item.data = new Date();
+
+		item.valor = $scope.veiculo.valor;
 
 		if ($scope.veiculo !== "") {
 

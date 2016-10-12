@@ -54,15 +54,17 @@
         <ion-nav-view></ion-nav-view>
 
 
-        <div id="gridUltimosAbastecimentos2" class="list">              
+        <div id="gridUltimosAbastecimentos" class="list">              
 
           <a class="item " href="#" ng-repeat="item in lista">
         
             <h2 class="dataAbastecimento">{{item.modelo}}</h2>
 
-            <p>Valor Abastecimento : R$ 15,00</p>
+            <p>Valor Abastecimento : R$ {{item.valor}}</p>
 
-            <p>Véiculo : {{item.modelo}}</p>
+            <p>Marca : {{item.marca}}</p>
+
+            <p>Data Abastecimento : {{item.data | date : 'dd/MM/yyyy h:mm:ss'}}</p>
 
           </a>
 
