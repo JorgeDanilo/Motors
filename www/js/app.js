@@ -85,5 +85,30 @@ app.controller('ListaAbastecimentoController', function($scope, $ionicModal, $lo
 
 	}
 
+
+	$scope.removerAbastecimentosVeiculos = function(item) {
+
+		var confirmPopup = $ionicPopup.confirm({
+     	
+	     	title: 'Informação',
+	     	
+	     	template: 'Deseja excluir o abastecimento ?'
+
+   		});
+
+   		confirmPopup.then(function(res) {
+	     
+	     if(res) {
+	       
+	       veiculo.remove(item);
+
+			veiculo.save();
+
+	     } else {
+	       
+	    }
+
+	   });		
+	}
 });
 
