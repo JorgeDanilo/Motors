@@ -5,7 +5,9 @@ var db = null;
 var app = angular.module('starter', ['ionic', 'starter.routes', 'starter.homeController','starter.modalService', 'ngStorage', 'ngCordova'])
 
 .run(function($ionicPlatform, $cordovaSQLite) {
+  
   $ionicPlatform.ready(function() {
+
     if(window.cordova && window.cordova.plugins.Keyboard) {
       
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -13,8 +15,11 @@ var app = angular.module('starter', ['ionic', 'starter.routes', 'starter.homeCon
       cordova.plugins.Keyboard.disableScroll(true);
     }
     if(window.StatusBar) {
+
       StatusBar.styleDefault();
+
     }
+
   });
 })
 
@@ -29,23 +34,33 @@ app.controller('ListaAbastecimentoController', function($scope, $ionicModal, $lo
 	$scope.lista = veiculo.itens;
 
 	$scope.veiculo = {
+	
 		modelo : "",
+	
 		marca : "",
-		tipo : ""
+	
+		tipo : "",
+
+		valorLitro : ""
 	};
 
 		$scope.abrirTelaCadastroVeiculo = function() {
+	
 			ModalService
+	
 				.init('templates/cadastroVeiculoModal.html', $scope)
+	
 				.then(function(modal) {
+	
 					modal.show();
+	
 			});
 		};
 
 
 	$scope.cadastrarVeiculo = function() {		
 
-		var item = {marca : "", modelo : "", tipo : "", data : "", valor : ""};		
+		var item = {marca : "", modelo : "", tipo : "", data : "", valor : "", valorLitro :  ""};		
 
 		$scope.lista = veiculo.itens;
 
@@ -58,6 +73,8 @@ app.controller('ListaAbastecimentoController', function($scope, $ionicModal, $lo
 		item.data = new Date();
 
 		item.valor = $scope.veiculo.valor;
+
+		item.valorLitro = $scope.veiculo.valorLitro;
 
 		if ($scope.veiculo !== "") {
 

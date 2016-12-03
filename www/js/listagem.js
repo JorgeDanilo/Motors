@@ -4,7 +4,7 @@ function getVeiculos() {
 	var lista = localStorage.getItem("veiculos");
 
 
-	if (lista !== null) {
+	if (lista !== null) {		
 		this.itens = angular.fromJson(lista);
 	}
 		

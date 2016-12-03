@@ -64,7 +64,11 @@
 
             <p>Marca : {{item.marca}}</p>
 
+            <p>Valor por Litro : R$ {{item.valorLitro}}</p>
+
             <p>Data Abastecimento : {{item.data | date : 'dd/MM/yyyy h:mm:ss'}}</p>
+
+            <p>Quantidade Litros : {{(item.valor / item.valorLitro)}}</p>
 
             <button id="btnRemover" ng-click="removerAbastecimentosVeiculos(item)" class="ion-close-round"></button>
 
