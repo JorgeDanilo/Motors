@@ -76,15 +76,20 @@ app.controller('ListaAbastecimentoController', function($scope, $ionicModal, $lo
 
 		item.valorLitro = $scope.veiculo.valorLitro;
 
-		if ($scope.veiculo !== "") {
+		console.log($scope.veiculo);
+
+		if ( $scope.veiculo !== "" ) {
 
 			console.log(item);
 
 			veiculo.add(item);
 
 			 var alertPopup = $ionicPopup.alert({
+
+			 title: 'Informação',
 		     
 		     template: '<center>Veículo cadastrado com sucesso!</center>'
+		     
 		   });
 
 		   alertPopup.then(function(res) {
@@ -93,11 +98,53 @@ app.controller('ListaAbastecimentoController', function($scope, $ionicModal, $lo
 		     
 		   });
 
+		   veiculo.save();
 
-		}
 
-		veiculo.save();
+		} else if ( $scope.veiculo.marca == "" ) {
 
+			$ionicPopup.alert({
+
+				template : '<center>Por favor preencher a Marca !</center>'
+
+			});
+
+		} else if ( $scope.veiculo.modelo == "" ) {
+
+			$ionicPopup.alert({
+
+				template : '<center>Por favor preencher o modelo !</center>'
+
+			});
+
+		} else if ( $scope.veiculo.tipo == "" ) {
+
+			$ionicPopup.alert({
+
+				template : '<center>Por favor preencher o tipo !</center>'
+
+			});
+
+		} else if ( $scope.veiculo.valor ==  "" ) {
+
+			$ionicPopup.alert({
+
+				template : '<center>Por favor preencher os campos !</center>'
+
+			});
+
+		} else if ( $scope.veiculo.valorLitro == "" ) {
+
+			$ionicPopup.alert({
+
+				template : '<center>Por favor preencher os campos !</center>'
+
+			});			
+
+		} 
+
+		// veiculo.save();
+// 
 		delete $scope.item;
 
 	}
@@ -109,7 +156,7 @@ app.controller('ListaAbastecimentoController', function($scope, $ionicModal, $lo
      	
 	     	title: 'Informação',
 	     	
-	     	template: 'Deseja excluir o abastecimento ?'
+	     	template: '<center>Deseja excluir o abastecimento ?</center>'
 
    		});
 
